@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3138E2CC-20A6-49C2-9F12-E2EFAE2135F3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ImportData</RootNamespace>
+    <AssemblyName>ImportData</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvalonLibrary">
+      <HintPath>..\Lib\AvalonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle">
+      <HintPath>..\Lib\BouncyCastle.dll</HintPath>
+    </Reference>
+    <Reference Include="Breadcrumb">
+      <HintPath>..\Lib\Breadcrumb.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheManager.Core">
+      <HintPath>..\Lib\CacheManager.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheManager.SystemRuntimeCaching">
+      <HintPath>..\Lib\CacheManager.SystemRuntimeCaching.dll</HintPath>
+    </Reference>
+    <Reference Include="CommandLineArgumentsParser">
+      <HintPath>..\Lib\CommandLineArgumentsParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Lib\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\Lib\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.NLog41">
+      <HintPath>..\Lib\Common.Logging.NLog41.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary">
+      <HintPath>..\Lib\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary.Caching">
+      <HintPath>..\Lib\CommonLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary.Controls">
+      <HintPath>..\Lib\CommonLibrary.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary.Reflection">
+      <HintPath>..\Lib\CommonLibrary.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary.ServiceModel.Client">
+      <HintPath>..\Lib\CommonLibrary.ServiceModel.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonLibrary.TraceWindow">
+      <HintPath>..\Lib\CommonLibrary.TraceWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="ConfigSettings">
+      <HintPath>..\Lib\ConfigSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="De.TorstenMandelkow.MetroChart">
+      <HintPath>..\Lib\De.TorstenMandelkow.MetroChart.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v12.2">
+      <HintPath>..\Lib\DevExpress.Data.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v12.2.Core">
+      <HintPath>..\Lib\DevExpress.Printing.v12.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v12.2">
+      <HintPath>..\Lib\DevExpress.Xpf.Core.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v12.2">
+      <HintPath>..\Lib\DevExpress.Xpf.Docking.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v12.2">
+      <HintPath>..\Lib\DevExpress.Xpf.Grid.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v12.2.Core">
+      <HintPath>..\Lib\DevExpress.Xpf.Grid.v12.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Layout.v12.2.Core">
+      <HintPath>..\Lib\DevExpress.Xpf.Layout.v12.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v12.2">
+      <HintPath>..\Lib\DevExpress.Xpf.Printing.v12.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v12.2.Core">
+      <HintPath>..\Lib\DevExpress.Xpf.Printing.v12.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="GongSolutions.Wpf.DragDrop">
+      <HintPath>..\Lib\GongSolutions.Wpf.DragDrop.dll</HintPath>
+    </Reference>
+    <Reference Include="GostCryptography">
+      <HintPath>..\Lib\GostCryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Hardcodet.Wpf.TaskbarNotification">
+      <HintPath>..\Lib\Hardcodet.Wpf.TaskbarNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\Lib\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="InterLinq">
+      <HintPath>..\Lib\InterLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.MetadataHelper">
+      <HintPath>..\Lib\Microsoft.Cci.MetadataHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.MetadataModel">
+      <HintPath>..\Lib\Microsoft.Cci.MetadataModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.PeReader">
+      <HintPath>..\Lib\Microsoft.Cci.PeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\Lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\Lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="NCrontab">
+      <HintPath>..\Lib\NCrontab.dll</HintPath>
+    </Reference>
+    <Reference Include="NDde">
+      <HintPath>..\Lib\NDde.dll</HintPath>
+    </Reference>
+    <Reference Include="NDesk.Options">
+      <HintPath>..\Lib\NDesk.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot">
+      <HintPath>..\Lib\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Wpf">
+      <HintPath>..\Lib\OxyPlot.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq">
+      <HintPath>..\Lib\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\Lib\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\Lib\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.ClientResources">
+      <HintPath>..\Lib\Sungero.ClientResources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Common">
+      <HintPath>..\Lib\Sungero.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Content.Client">
+      <HintPath>..\Lib\Sungero.Content.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Content.ClientBase">
+      <HintPath>..\Lib\Sungero.Content.ClientBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Content.ContentDataBinders">
+      <HintPath>..\Lib\Sungero.Content.ContentDataBinders.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Content.Shared">
+      <HintPath>..\Lib\Sungero.Content.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.CoreEntities.Client">
+      <HintPath>..\Lib\Sungero.CoreEntities.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.CoreEntities.ClientBase">
+      <HintPath>..\Lib\Sungero.CoreEntities.ClientBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.CoreEntities.Shared">
+      <HintPath>..\Lib\Sungero.CoreEntities.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Cryptography.Plugin">
+      <HintPath>..\Lib\Sungero.Cryptography.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Domain.Client">
+      <HintPath>..\Lib\Sungero.Domain.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Domain.ClientBase">
+      <HintPath>..\Lib\Sungero.Domain.ClientBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Domain.Interfaces">
+      <HintPath>..\Lib\Sungero.Domain.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Domain.Shared">
+      <HintPath>..\Lib\Sungero.Domain.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Metadata">
+      <HintPath>..\Lib\Sungero.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Plugins">
+      <HintPath>..\Lib\Sungero.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Plugins.Sdk">
+      <HintPath>..\Lib\Sungero.Plugins.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Presentation">
+      <HintPath>..\Lib\Sungero.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Presentation.CommonDataBinders">
+      <HintPath>..\Lib\Sungero.Presentation.CommonDataBinders.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Reporting.Client">
+      <HintPath>..\Lib\Sungero.Reporting.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Reporting.ClientBase">
+      <HintPath>..\Lib\Sungero.Reporting.ClientBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Reporting.Shared">
+      <HintPath>..\Lib\Sungero.Reporting.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Services.Shared">
+      <HintPath>..\Lib\Sungero.Services.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.StorageService.Client">
+      <HintPath>..\Lib\Sungero.StorageService.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.StorageServices.Shared">
+      <HintPath>..\Lib\Sungero.StorageServices.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Workflow.Client">
+      <HintPath>..\Lib\Sungero.Workflow.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Workflow.ClientBase">
+      <HintPath>..\Lib\Sungero.Workflow.ClientBase.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Workflow.DataBinders">
+      <HintPath>..\Lib\Sungero.Workflow.DataBinders.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Workflow.Interfaces">
+      <HintPath>..\Lib\Sungero.Workflow.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Sungero.Workflow.Shared">
+      <HintPath>..\Lib\Sungero.Workflow.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SungeroContentComServer">
+      <HintPath>..\Lib\SungeroContentComServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Logic\BusinessLogic.cs" />
+    <Compile Include="Entities\Databooks\BusinessUnit.cs" />
+    <Compile Include="Entities\Databooks\Company.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Entities\EDocs\Contract.cs" />
+    <Compile Include="Entities\Databooks\Department.cs" />
+    <Compile Include="Entities\Databooks\Employee.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Logic\EntityProcessor.cs" />
+    <Compile Include="Logic\EntityWrapper.cs" />
+    <Compile Include="Logic\ExcelProcessor.cs" />
+    <Compile Include="Entities\EDocs\IncomingLetter.cs" />
+    <Compile Include="Entities\EDocs\OutgoingLetter.cs" />
+    <Compile Include="Entities\Databooks\Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structures.cs" />
+    <Compile Include="Entities\EDocs\SupAgreement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Services.client.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
